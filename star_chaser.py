@@ -39,8 +39,13 @@ def run_game():
 		
 		gf.update_screen(ai_settings,screen,nova,bullets)
 		
+		#get rid of bullets that have disappeared
+		for bullet in bullets.copy():
+			if bullet.rect.bottom <= 0:
+				bullets.remove(bullet)
+				
+		prin(len(bullets))
 		
-	
 
 run_game()
 		
