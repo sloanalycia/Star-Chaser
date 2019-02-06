@@ -18,6 +18,9 @@ def run_game():
 	#Make the character
 	nova = Star_Character(ai_settings,screen)
 	
+	#make bullet group to store bullets
+	bullet = Group()
+	
 	#Set the background image
 	bg_color = (255,255,255)
 	
@@ -28,11 +31,13 @@ def run_game():
 	#Start the main loop for the game.
 	while True:
 		
-		gf.check_events(nova)
+		gf.check_events(ai_settings, screen,nova,bullets)
 		
 		nova.update()
 		
-		gf.update_screen(ai_settings,screen,nova)
+		bulelts.update()
+		
+		gf.update_screen(ai_settings,screen,nova,bullets)
 		
 		
 	
