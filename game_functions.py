@@ -8,24 +8,24 @@ from bullet import Bullet
 
 def check_keydown_events(event,nova,bullets):
 	
-		if event.key == pygame.K_UP:
-			nova.moving_up = True
+	if event.key == pygame.K_UP:
+		nova.moving_up = True
 			
-		elif event.key == pygame.K_DOWN:
-			nova.moving_down = True
+	elif event.key == pygame.K_DOWN:
+		nova.moving_down = True
 			
 			
-		elif event.key == pygame.K_SPACE:
-			new_bullet = Bullet(ai_settings,screen,nova)
-			bullets.add(new_bullet)
+	elif event.key == pygame.K_SPACE:
+		new_bullet = Bullet(ai_settings,screen,nova)
+		bullets.add(new_bullet)
 	
 def check_keyup_events(event,nova):
 	
-		if event.key == pygame.K_UP:
-			nova.moving_up = False
+	if event.key == pygame.K_UP:
+		nova.moving_up = False
 					
-		elif event.key == pygame.K_DOWN:
-			nova.moving_down = False
+	elif event.key == pygame.K_DOWN:
+		nova.moving_down = False
 
 def check_events(ai_settings,screen,nova,bullets):
 	#Respond to key presses and mouse events
@@ -57,3 +57,5 @@ def update_screen(ai_settings,screen,nova,bullets):
 				
 		#Make the most recently drawn screen visible
 		pygame.display.flip()
+
+	
