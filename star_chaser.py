@@ -1,10 +1,12 @@
-import sys
+
 
 import pygame
 
 from galaxy_settings import Settings
 
 from star_character import Star_Character
+
+import game_functions as gf
 
 def run_game():
 	#Initialize the game and create the screen object.
@@ -14,7 +16,7 @@ def run_game():
 	pygame.display.set_caption("Star Chaser")
 	
 	#Make the character
-	nova = Star_Character(screen)
+	nova = Star_Character(ai_settings,screen)
 	
 	#Set the background image
 	bg_color = (255,255,255)
@@ -26,16 +28,13 @@ def run_game():
 	#Start the main loop for the game.
 	while True:
 		
-			
-		#Redraw the screen during each pass through the loop
-		screen.fill(ai_settings.bg_color)
+		gf.check_events(nova)
 		
-		#screen.blit(bg_image, [0,0])
+		nova.update()
 		
-		nova.blitme()
-				
-		#Make the most recently drawn screen visible
-		pygame.display.flip()
+		gf.update_screen(ai_settings,screen,nova)
+		
+		
 	
 
 run_game()
