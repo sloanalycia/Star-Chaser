@@ -38,14 +38,7 @@ def run_game():
 		
 		nova.update()
 		
-		bullets.update()
-		
-		
-		
-		#get rid of bullets that have disappeared
-		for bullet in bullets.copy():
-			if bullet.rect.bottom <= 0:
-				bullets.remove(bullet)
+		gf.update_bullets(bullets)
 				
 		print(len(bullets))
 		
