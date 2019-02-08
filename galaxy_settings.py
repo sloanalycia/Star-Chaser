@@ -18,8 +18,8 @@ class Settings():
 		self.nova_speed_factor = 3.5
 		
 		#bullet settings
-		self.bullet_speed_factor = 1 
-		self.bullet_width = 3
-		self.bullet_height = 15
-		self.bullet_color = (233,233,233)
-		self.bullets_allowed = 3
+		self.bullet_speed_factor = 5
+		self.bullet_width = 15
+		self.bullet_height = 5
+		self.bullet_color = 233,233,233
+		self.bullets_allowed = 5

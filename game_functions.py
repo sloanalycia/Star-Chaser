@@ -6,7 +6,7 @@ from bullet import Bullet
 
 
 
-def check_keydown_events(event,nova,bullets):
+def check_keydown_events(event,ai_settings,screen,nova,bullets):
 	
 	if event.key == pygame.K_UP:
 		nova.moving_up = True
@@ -16,8 +16,9 @@ def check_keydown_events(event,nova,bullets):
 			
 			
 	elif event.key == pygame.K_SPACE:
-		new_bullet = Bullet(ai_settings,screen,nova)
-		bullets.add(new_bullet)
+		if len(bullets) < ai_settings.bullets_allowed:
+			new_bullet = Bullet(ai_settings,screen,nova)
+			bullets.add(new_bullet)
 	
 def check_keyup_events(event,nova):
 	
@@ -51,7 +52,7 @@ def update_screen(ai_settings,screen,nova,bullets):
 		
 		#redraw all bullets behind nova and other features
 		for bullet in bullets.sprites():
-			bullet.draw_bullet()
+			bullet.draw_bullets()
 		
 		nova.blitme()
 				
