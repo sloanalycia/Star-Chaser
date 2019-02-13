@@ -16,7 +16,10 @@ def check_keydown_events(event,ai_settings,screen,nova,bullets):
 			
 			
 	elif event.key == pygame.K_SPACE:
-		fire_bullet(ai_settings,screen,nova,bullets)
+		fire_bullets(ai_settings,screen,nova,bullets)
+		
+	elif event.key == pygame.K_q:
+		sys.exit()
 		
 def fire_bullets(ai_settings,screen,nova,bullets):
 		if len(bullets) < ai_settings.bullets_allowed:
@@ -45,7 +48,7 @@ def check_events(ai_settings,screen,nova,bullets):
 			
 			
 
-def update_screen(ai_settings,screen,nova,bullets):
+def update_screen(ai_settings,screen,nova,alien_1,bullets):
 	#Update images on the screen and flip to the new screen
 	
 	#Redraw the screen during each pass through the loop
@@ -58,6 +61,7 @@ def update_screen(ai_settings,screen,nova,bullets):
 			bullet.draw_bullets()
 		
 		nova.blitme()
+		alien_1.blitme()
 				
 		#Make the most recently drawn screen visible
 		pygame.display.flip()
@@ -68,6 +72,6 @@ def update_bullets(bullets):
 
 	#get rid of bullets that have disappeared
 	for bullet in bullets.copy():
-		if bullet.rect.bottom <= 0:
+		if bullet.rect.left >= 1200:
 			bullets.remove(bullet)
-	
+	print(len(bullets))

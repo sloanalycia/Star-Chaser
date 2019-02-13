@@ -8,13 +8,15 @@ from galaxy_settings import Settings
 
 from star_character import Star_Character
 
+from alien_1 import Alien1
+
 import game_functions as gf
 
 
 def run_game():
 	#Initialize the game and create the screen object.
 	pygame.init()
-	ai_settings = Settings()
+	ai_settings = Settings() 
 	screen = pygame.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))
 	pygame.display.set_caption("Star Chaser")
 	
@@ -27,7 +29,7 @@ def run_game():
 	#Set the background image
 	bg_color = (255,255,255)
 	
-	
+	alien_1 = Alien1(ai_settings,screen)
 	
 	
 	
@@ -39,10 +41,10 @@ def run_game():
 		nova.update()
 		
 		gf.update_bullets(bullets)
-				
-		print(len(bullets))
 		
-		gf.update_screen(ai_settings,screen,nova,bullets)
+		#gf.update_alien(alien1)		
+		
+		gf.update_screen(ai_settings,screen,nova,alien_1,bullets)
 
 run_game()
 		
