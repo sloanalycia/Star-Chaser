@@ -2,6 +2,8 @@ import pygame
 from pygame.sprite import Sprite
 from random import randint
 
+#import time?
+
 class Alien1(Sprite):
 	#this class represents this alien as generated randomly
 	
@@ -22,6 +24,11 @@ class Alien1(Sprite):
 		
 		self.x = float(self.rect.x)
 		
+		
+			
+			
+			
+		
 	def blitme(self):
 		self.screen.blit(self.image,self.rect)
 		
@@ -29,10 +36,20 @@ class Alien1(Sprite):
 		self.x -= self.ai_settings.alien_1_speed
 		self.rect.x = self.x
 		
+		alien_1_group = Group()
+		
+		now = pygame.time.get_ticks()
+		time_difference = pygame.time.get_ticks()-now
+		if time_difference >= 1000:
+			alien_1_group.add(blitme)
+			now = pygame.time.get_ticks()
+		
+	'''
 	def check_edges(self):
 		screen_rect = self.screen.get_rect()
 		if self.rect.left >= screen_rect.left:
 			return True
 		elif self.rect.left <=0:
 			return True
+	'''
 			
