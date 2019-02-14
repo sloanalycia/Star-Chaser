@@ -42,7 +42,7 @@ def run_game():
 		
 		gf.update_bullets(bullets)
 		
-		#gf.update_alien(alien1)		
+		gf.update_alien(alien_1)		
 		
 		gf.update_screen(ai_settings,screen,nova,alien_1,bullets)
 

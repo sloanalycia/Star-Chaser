@@ -28,3 +28,11 @@ class Alien1(Sprite):
 	def update(self):
 		self.x -= self.ai_settings.alien_1_speed
 		self.rect.x = self.x
+		
+	def check_edges(self):
+		screen_rect = self.screen.get_rect()
+		if self.rect.left >= screen_rect.left:
+			return True
+		elif self.rect.left <=0:
+			return True
+			

@@ -75,3 +75,8 @@ def update_bullets(bullets):
 		if bullet.rect.left >= 1200:
 			bullets.remove(bullet)
 	print(len(bullets))
+
+def update_alien(alien_1):
+	alien_1.update()
+	
+
