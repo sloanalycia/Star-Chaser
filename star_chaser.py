@@ -20,16 +20,24 @@ def run_game():
 	screen = pygame.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))
 	pygame.display.set_caption("Star Chaser")
 	
+	clock = pygame.time.Clock()
+	
 	#Make the character
 	nova = Star_Character(ai_settings,screen)
 	
 	#make bullet group to store bullets
 	bullets = Group()
 	
+	alien_1_group = Group()
+	
+	#gf.create_fleet(ai_settings,screen,alien_1_group)
+	
 	#Set the background image
 	bg_color = (255,255,255)
 	
 	alien_1 = Alien1(ai_settings,screen)
+	
+	
 	
 	
 	
@@ -42,7 +50,7 @@ def run_game():
 		
 		gf.update_bullets(bullets)
 		
-		gf.update_alien(alien_1)		
+		gf.update_alien(ai_settings,alien_1_group)		
 		
 		gf.update_screen(ai_settings,screen,nova,alien_1,bullets)
 

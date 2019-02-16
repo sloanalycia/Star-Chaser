@@ -4,6 +4,8 @@ import pygame
 
 from bullet import Bullet
 
+from alien_1 import Alien1
+
 
 
 def check_keydown_events(event,ai_settings,screen,nova,bullets):
@@ -76,7 +78,7 @@ def update_bullets(bullets):
 			bullets.remove(bullet)
 	print(len(bullets))
 
-def update_alien(alien_1):
+def update_alien(ai_settings,alien_1):
 	alien_1.update()
 	
 

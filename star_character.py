@@ -37,7 +37,6 @@ class Star_Character():
 		
 		self.rect.centery = self.center
 		
-	
 		
 	
 	def blitme(self):
